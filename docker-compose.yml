@@ -73,9 +73,8 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config:ro,Z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
-      - /home/long/TECHLEAD_project/jira-dev/tgng-backend-cloud/log:/usr/share/logstash/log:ro,Z
     ports:
       - 5044:5044
       - 50000:50000/tcp
