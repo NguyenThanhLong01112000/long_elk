@@ -73,7 +73,7 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config:ro,Z
+      - ./logstash/config:/usr/share/logstash/config:ro,Z
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
     ports:
       - 5044:5044
@@ -95,7 +95,7 @@ services:
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
     volumes:
-      - ./kibana/config/kibana.yml:/usr/share/kibana/config:ro,Z
+      - ./kibana/config:/usr/share/kibana/config:ro,Z
     ports:
       - 5601:5601
     environment:
